@@ -1,0 +1,27 @@
+/* Product list start */
+.product-container{
+    width: 100%;
+    min-height: 320px;
+    background-color: white;
+    padding: 0px 20px;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.product-container .product-header{
+    height: 60px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.product-container .prodcut-header-title{
+    font-weight: 600;
+    font-size: 20px;
+}
+.product-container .prodcut-image-container{
+    width: 200px;
+    height: 150px;
+    text-align: center;
+}
+.product-container .prodcut-image-container .product-image{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+/* Product list end */
