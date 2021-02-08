@@ -18,7 +18,9 @@ const MenuHeader = () => {
                 <li key={cat?._id}>
                     {
                         cat?.parentId ?
-                            <a href={`/products/${cat?.slug}`}>
+                            <a 
+                                href={`/products/${cat?.slug}?cid=${cat._id}&type=${cat.type}`}
+                            >
                                 {cat?.name}
                             </a>
                             : <span>

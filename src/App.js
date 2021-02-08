@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Homepage from "./containers/Homepage/Homepage";
 import ProductsList from "./containers/ProductsList/ProductsList";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

@@ -1,10 +1,4 @@
-/* Header Page start */
-.header{
-    width: 100%;
-    height: 56px;
-    background-color: #20CECA;
-}
-/* Header Page end */
+
 /* Menu Header Start */
 .menu-header{
     width: 100%;
@@ -59,6 +53,7 @@
     padding: 20px 0px;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%);
     display: none;
+    z-index: 1;
 }
 .menu-header > ul > li:hover ul{
     display: block;
