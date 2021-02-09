@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { getProductsBySlug } from '../../redux/action/product.action';
 import { productImgWithApi } from '../../urlConfig';
 
@@ -14,7 +14,7 @@ const ProductStore = () => {
     useEffect(() => {
         dispatch(getProductsBySlug(slug))
     }, [dispatch, slug])
-    
+
     return (
         <>
             {
@@ -36,19 +36,21 @@ const ProductStore = () => {
                                             {
                                                 product?.productsByPrice[key]?.slice(0, 6).map(pd =>
                                                     <div key={pd?._id} className='col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6'>
-                                                        <div className='py-2 px-1'>
-                                                            <div className='prodcut-image-container'>
-                                                                <img src={productImgWithApi(pd?.productPictures[0]?.img)} className='product-image' alt={pd?.productName} />
-                                                            </div>
-                                                            <div className='text-center mt-2'>
-                                                                <h6>{pd?.productName}</h6>
-                                                                <div>
-                                                                    <span>132</span> &nbsp;
-                                                                    <span>132</span>
+                                                        <NavLink to={`/products/${slug}/${pd?._id}`} style={{textDecoration: 'none'}}>
+                                                            <div className='py-2 px-1'>
+                                                                <div className='prodcut-image-container'>
+                                                                    <img src={productImgWithApi(pd?.productPictures[0]?.img)} className='product-image' alt={pd?.productName} />
                                                                 </div>
-                                                                <div className='prodcut-price'>{pd?.price}</div>
+                                                                <div className='text-center mt-2'>
+                                                                    <h6>{pd?.productName}</h6>
+                                                                    <div>
+                                                                        <span>132</span> &nbsp;
+                                                                    <span>132</span>
+                                                                    </div>
+                                                                    <div className='prodcut-price'>{pd?.price}</div>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        </NavLink>
                                                     </div>
                                                 )
                                             }

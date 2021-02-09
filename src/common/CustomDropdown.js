@@ -6,7 +6,8 @@ const CustomDropdown = (props) => {
         <div className='dropdown'>
             {
                 props?.span ?
-                    <h6 className='mt-2'><span className='dropdown-show'>{props.span}</span></h6>
+                    <h6 className='mt-2'><span className='dropdown-show'>{props.span}</span></h6> 
+                : props?.loginUser ? <span style={{fontWeight: '600'}}>{props.loginUser}</span>
                 : <button className='login-btn'>{props.btn}</button>
             }
             <div className='dropdown-content'>

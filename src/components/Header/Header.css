@@ -69,5 +69,6 @@
 .create-account{
   font-weight: 600;
   float: right;
+  cursor: pointer;
 }
 /* Login form end */

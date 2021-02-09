@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_BY_PAGE_REQUEST, GET_PRODUCTS_BY_PAGE_REQUEST_FAILED, GET_PRODUCTS_BY_PAGE_REQUEST_SUCCESS, GET_PRODUCTS_BY_SLUG_REQUEST, GET_PRODUCTS_BY_SLUG_REQUEST_FAILED, GET_PRODUCTS_BY_SLUG_REQUEST_SUCCESS } from "../type";
+import { GET_PRODUCTS_BY_PAGE_REQUEST, GET_PRODUCTS_BY_PAGE_REQUEST_FAILED, GET_PRODUCTS_BY_PAGE_REQUEST_SUCCESS, GET_PRODUCTS_BY_SLUG_REQUEST, GET_PRODUCTS_BY_SLUG_REQUEST_FAILED, GET_PRODUCTS_BY_SLUG_REQUEST_SUCCESS, productsConstants } from "../type";
 
 const initialState = {
     loading: false,
@@ -11,6 +11,7 @@ const initialState = {
         up20k: [],
     },
     page: {},
+    productDetails: {},
     error: ''
 }
 
@@ -59,6 +60,27 @@ const productReducer = (state = initialState, action) => {
                 loading: false,
                 page: {},
                 error: action.payload
+            }
+            return state;
+        case productsConstants?.PRODUCT_BY_ID_REQUEST:
+            state = {
+                ...state,
+                loading: true,
+            }
+            return state;
+        case productsConstants?.PRODUCT_BY_ID_SUCCESS:
+            state = {
+                ...state,
+                loading: false,
+                productDetails: action?.payload
+            }
+            return state;
+        case productsConstants?.PRODUCT_BY_ID_FAILURE:
+            state = {
+                ...state,
+                loading: false,
+                productDetails: {},
+                error: action?.payload
             }
             return state;
         default:
