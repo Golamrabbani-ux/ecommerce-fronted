@@ -29,3 +29,9 @@ export const authConstants = {
     SIGINUP_SUCCESS: "SIGINUP_SUCCESS",
     SIGINUP_FALIURE: "SIGINUP_FALIURE",
 }
+
+
+// Cart Type
+export const cartConstants = {
+    ADD_TO_CART:'ADD_TO_CART'
+}

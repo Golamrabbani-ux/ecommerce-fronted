@@ -21,6 +21,17 @@
 .dropdown-class:hover{
   background-color: #FAF9F9;
 }
+.header-cart{
+  cursor: pointer;
+  margin-top: 7px;
+  font-weight: 600;
+}
+.badge{
+  position: absolute;
+  color: black;
+  top: 0;
+  left: 25px;
+}
 /* Login form start */
 .login-left-side{
   width: 100%;

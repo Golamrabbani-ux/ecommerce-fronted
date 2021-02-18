@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import logo from '../../others/logo.png'
-import { IoAddCircleOutline, IoDownloadOutline, IoGiftOutline, IoHeartOutline, IoLogInOutline, IoMedkitOutline, IoMoveSharp, IoNotificationsOutline, IoPersonCircleOutline, IoSearchOutline, IoShareSocialOutline } from "react-icons/io5";
+import { IoAddCircleOutline, IoCartSharp, IoDownloadOutline, IoGiftOutline, IoHeartOutline, IoLogInOutline, IoMedkitOutline, IoMoveSharp, IoNotificationsOutline, IoPersonCircleOutline, IoSearchOutline, IoShareSocialOutline } from "react-icons/io5";
 import './Header.css';
 import CustomDropdown from '../../common/CustomDropdown';
 import LoginForm from './LoginForm';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 
 const dropdownLoginMenu = [
     { label: 'My Profile', logo: <IoPersonCircleOutline />, href: '/myprofile' },
@@ -31,9 +31,9 @@ const dropdownMoreMenu = [
 
 
 const Header = () => {
-    const dispatch = useDispatch();
     const [show, setShow] = useState(false);
     const { authenticate, user } = useSelector(state => state?.auth);
+    const { cartItems } = useSelector(state => state?.cart);
 
     return (
         <div className='container-fluid p-0'>
@@ -116,7 +116,15 @@ const Header = () => {
                             }
                         </CustomDropdown>
                     </div>
-                    <div className='col-md-1'>{`Cart`}</div>
+                    <div className='col-md-1'>
+                        <div className='header-cart'>
+                            <NavLink to='/cart' style={{textDecoration: 'none'}}>
+                                <IoCartSharp size='20' />
+                                <span className="badge badge-primary">{Object.keys(cartItems)?.length}</span>
+                                <span className='ml-2'>Cart</span>
+                            </NavLink>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/* Login Area  */}
