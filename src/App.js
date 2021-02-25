@@ -8,6 +8,8 @@ import { isUserLoggedIn } from "./redux/action/auth.action";
 import ProductDetails from "./containers/ProductDetails/ProductDetails";
 import Cart from "./containers/Cart/Cart";
 import { updateToCart } from "./redux/action/cart.action";
+import Checkout from "./containers/Checkout/Checkout";
+import OrderPlace from "./containers/OrderPlace/OrderPlace";
 
 
 function App() {
@@ -20,10 +22,9 @@ function App() {
     }
   }, [auth?.authenticate, dispatch])
 
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(updateToCart())
   }, [dispatch])
-
 
 
   return (
@@ -33,6 +34,8 @@ function App() {
         <Route path='/products/:slug/:productId' component={ProductDetails} />
         <Route path='/products/:slug' component={ProductsList} />
         <Route path='/cart' component={Cart} />
+        <Route path='/checkout' component={Checkout} />
+        <Route path='/order-place-success' component={OrderPlace} />
 
         <Route path='*' component={() => <h1>Not Found this page</h1>} />
       </Switch>

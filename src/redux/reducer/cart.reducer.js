@@ -5,7 +5,7 @@ const initialState = {
 }
 
 
-const cartReducer = (state = initialState, action) =>{
+const cartReducer = (state = initialState, action) => {
     switch (action?.type) {
         case cartConstants?.ADD_TO_CART:
             state = {
@@ -13,7 +13,12 @@ const cartReducer = (state = initialState, action) =>{
                 cartItems: action?.payload
             }
             return state;
-    
+        case cartConstants?.CART_RESET:
+            state = {
+                ...state,
+                cartItems: {}
+            }
+            return state;
         default:
             return state;
     }

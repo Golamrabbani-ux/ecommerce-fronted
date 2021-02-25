@@ -37,7 +37,7 @@
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.login-btn:focus{
+.login-btn:focus {
   outline: none;
   border: none;
 }
@@ -45,3 +45,42 @@
 /* CustomModal start */
 
 /* CustomModal end */
+/* Custom Accordion */
+.accordion {
+  margin: 20px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.card-header {
+  background-color: white !important;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+  font-weight: 600;
+  color: dimgray;
+  cursor: pointer;
+}
+.custom-card-header {
+  background-color: #2874f0 !important;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+/* Custom Accordion */
+/* Custom Header start */
+.custom-header {
+  width: 100%;
+  background-color: white;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);    
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+  font-weight: 600;
+  color: dimgray;
+  cursor: not-allowed;
+}
+.cancel-address-btn{
+  float: right;
+  margin-top: -50px;
+  border: 0;
+  outline: 0;
+}
+/* Custom Header end */

@@ -5,7 +5,7 @@ import './Header.css';
 import CustomDropdown from '../../common/CustomDropdown';
 import LoginForm from './LoginForm';
 import { useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const dropdownLoginMenu = [
     { label: 'My Profile', logo: <IoPersonCircleOutline />, href: '/myprofile' },
@@ -92,12 +92,13 @@ const Header = () => {
                                     }
                                     <div
                                         onClick={() => {
-                                            localStorage.clear();
+                                            localStorage.removeItem('token')
+                                            localStorage.removeItem('user')
                                         }}
                                         className='dropdown-class d-flex align-items-center'
                                     >
                                         <IoLogInOutline />
-                                        <span className='dropdown-a'>Logout</span>
+                                        <span className='dropdown-a' onClick={()=> window.location.reload()}>Logout</span>
                                     </div>
                                 </CustomDropdown>
                         }

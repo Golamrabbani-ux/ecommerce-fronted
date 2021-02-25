@@ -76,3 +76,22 @@
 }
 
 /* Menu Header end */
+/* Cart calucaltion start */
+.cart-cal-div{
+    width: 100%;
+    min-height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.01) 0px 3px 6px;
+}
+.cart-cal-div-header{
+    color: dimgray;
+    box-shadow: rgb(0 0 0 / 20%) 0px 1px 2px 0px;
+    padding: 12px 20px;
+}
+.cart-calculation-p{
+    color: dimgray;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 4px;
+}
+/* Cart calucaltion start */

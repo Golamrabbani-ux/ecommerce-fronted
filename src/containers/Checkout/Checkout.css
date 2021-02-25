@@ -1,0 +1,116 @@
+.checkout-common-p{
+    /* margin: 16px 0; */
+    color: #212121;
+    margin-left: 10px;
+}
+.checkout-input{
+    width: 100%;
+    padding: 5px 0px;
+    margin: 5px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid #cecece;
+    outline: 0;
+    border-bottom: 2px solid #000;
+}
+.btn-continue{
+    margin-top: 20px;
+    width: 80%;
+    height: 45px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    background-color: #fb641b;
+    color: white;
+    text-transform: uppercase;
+}
+.adr-name{
+    font-weight: 600;
+    margin: -3px 0px;
+}
+.adr-type, .adr-type-dafault{
+    background-image: linear-gradient(-143deg, rgb(255, 123, 83) 0%, rgb(255, 75, 40) 100%);
+    padding: 2px 14px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.adr-type{
+    background-image: linear-gradient(39deg, rgb(0, 148, 182) 0%, rgb(91, 187, 206) 100%);
+    color: white;
+}
+.delevery-her-btn{
+    width: 140px;
+    height: 40px;
+    background-color: rgb(255, 123, 83);
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+/* Custom modal or add a new address start*/
+.new-address{
+    font-size: 25px;
+    color: #212121;
+    font-weight: 400;
+    display: inline-block;
+}
+.new-address-input{
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 38px \0;
+    padding: 0 35px 0 10px;
+    margin-bottom: 5px;
+    outline: none;
+}
+.new-address-input:focus{
+    border: 2px solid dodgerblue;
+}
+.delevery-type{
+    background: #f8f8f8;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    color: #333;
+    padding: 19px 20px;
+    margin-right: 15px;
+}
+.delevery-home-active{
+    background: rgba(0,148,182,.02);
+    border: 1px solid #0094b6;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 12%);
+}
+.delevery-office-active{
+    background: rgba(255,102,73,.05);
+    border: 1px solid #ff6649;
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 12%);
+}
+.delevery-save-btn{
+    background-color: #1a9cb7;
+    font-size: 14px;
+    width: 168px;
+    height: 40px;
+    margin-top: 20px;
+    line-height: 40px;
+    border: 0;
+    outline: none;
+}
+.media{
+    position: relative;
+}
+.add-new-address{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: dodgerblue;
+    cursor: pointer;
+}
+.add-new-address:hover{
+    cursor: pointer;
+}
+/* Custom modal or add a new address end*/

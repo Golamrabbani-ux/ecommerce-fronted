@@ -2,7 +2,7 @@ import axiosInstance from "../../helper/axios";
 import { authConstants } from "../type";
 
 
-export const userLogin = (userInfo, setShow) => {
+export const userLogin = (userInfo, setShow=null) => {
     return async dispatch => {
         try {
             dispatch({ type: authConstants?.LOGIN_REQUEST })

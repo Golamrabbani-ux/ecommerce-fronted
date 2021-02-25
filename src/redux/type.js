@@ -33,5 +33,23 @@ export const authConstants = {
 
 // Cart Type
 export const cartConstants = {
-    ADD_TO_CART:'ADD_TO_CART'
+    ADD_TO_CART:'ADD_TO_CART',
+    CART_RESET:'CART_RESET'
+}
+
+
+// Adress Type
+export const addressConstants = {
+    ADDRESS_REQUEST: "ADDRESS_REQUEST",
+    ADDRESS_SUCCESS: "ADDRESS_SUCCESS",
+    ADDRESS_FAILURE: "ADDRESS_FAILURE",
+    ADD_ADDRESS_REQUEST: "ADD_ADDRESS_REQUEST",
+    ADD_ADDRESS_SUCCESS: "ADD_ADDRESS_SUCCESS",
+    ADD_ADDRESS_FAILURE: "ADD_ADDRESS_FAILURE"
+}
+// Order Type
+export const orderConstants = {
+    ADD_ORDER_REQUEST:"ORDER_ADD_REQUEST",
+    ADD_ORDER_SUCCESS:"ORDER_ADD_SUCCESS",
+    ADD_ORDER_FAILURE:"ORDER_ADD_FAILURE"
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IoAnalytics, IoCartSharp, IoChevronForwardOutline, IoShareSocialOutline } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import LayoutPage from '../../components/LayoutPage/LayoutPage';
 import { addToCart } from '../../redux/action/cart.action';
 import { getProductDetailsBYId } from '../../redux/action/product.action';
@@ -10,6 +10,7 @@ import '../containers.css';
 
 const ProductDetails = () => {
     const params = useParams();
+    const histroy = useHistory();
     const dispatch = useDispatch();
     const { productDetails } = useSelector(state => state?.product);
     const [bigImageShow, setBigImageShow] = useState(null);
@@ -88,6 +89,7 @@ const ProductDetails = () => {
                                             const img = singleImage?.img;
                                             const { _id, productName, price } = productDetails;
                                             dispatch(addToCart({ _id, productName, price, img }))
+                                            histroy.push('/cart')
                                         }}
                                     >
                                         <IoCartSharp size={25} color='white' /> Add to cart
