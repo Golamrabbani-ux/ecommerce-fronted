@@ -28,6 +28,32 @@
 /* Product page start */
 
 /* Product page end */
+/* Products by products start */
+.product-card{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    color: dimgray;
+    line-height: 1;
+    padding: 24px 0 30px 24px;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.product-details .product-title{
+    color: black;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.product-details ul{
+    padding: 0 1rem;
+    margin: 0;
+}
+.product-card:hover .product-details .product-title{
+    color: dodgerblue;
+}
+/* Products by products end */
 /* Product Details start */
 .image-conatiner{
     width: 90%;
@@ -80,3 +106,4 @@
     font-weight: 600;
 }
 /* Order place start */
+/* Home page start */

@@ -82,4 +82,7 @@
   float: right;
   cursor: pointer;
 }
+.error-text{
+  color: #F32013;
+}
 /* Login form end */

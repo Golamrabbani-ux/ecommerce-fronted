@@ -10,7 +10,8 @@ import Cart from "./containers/Cart/Cart";
 import { updateToCart } from "./redux/action/cart.action";
 import Checkout from "./containers/Checkout/Checkout";
 import OrderPlace from "./containers/OrderPlace/OrderPlace";
-
+import Order from "./containers/Order/Order";
+import OrderDetails from "./containers/OrderDetails/OrderDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,8 @@ function App() {
         <Route path='/cart' component={Cart} />
         <Route path='/checkout' component={Checkout} />
         <Route path='/order-place-success' component={OrderPlace} />
+        <Route path='/accounts/orders' component={Order} />
+        <Route path='/order-details/:orderId' component={OrderDetails} />
 
         <Route path='*' component={() => <h1>Not Found this page</h1>} />
       </Switch>

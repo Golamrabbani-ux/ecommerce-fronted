@@ -4,7 +4,7 @@ import CustomAccordion from '../../common/CustomAccordion';
 import Layout from '../../components/LayoutPage/LayoutPage'
 import { RiCaravanLine } from "react-icons/ri";
 import { IoNotificationsOutline, IoStarSharp } from 'react-icons/io5';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogin } from '../../redux/action/auth.action';
 import { getUserAddress } from '../../redux/action/address.action';
@@ -21,7 +21,7 @@ const Checkout = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const { auth, address, cart } = useSelector(state => state);
-    const { authenticate, user } = auth;
+    const { authenticate, user, error } = auth;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [show, setShow] = useState(false);
@@ -68,6 +68,7 @@ const Checkout = () => {
                             dispatch(userLogin({ email, password }))
                         }}
                     >
+                        <small className='error-text'>{error}</small>
                         <input
                             className='checkout-input'
                             placeholder='Enter Your Email'
@@ -177,9 +178,9 @@ const Checkout = () => {
             addressId: confirmedAddress._id,
             totalAmount: totalAmount,
             paymentStatus: "pending",
+            paymentType:"cod",
             items: items
         }
-        // console.log(orderPayload);
         dispatch(addOrder(orderPayload, history))
     }
 

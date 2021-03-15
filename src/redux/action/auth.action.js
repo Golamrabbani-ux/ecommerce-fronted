@@ -20,27 +20,31 @@ export const userLogin = (userInfo, setShow=null) => {
         } catch (error) {
             dispatch({
                 type: authConstants?.LOGIN_FALIURE,
-                payload: error?.message
+                payload: error?.response?.data?.message
             })
         }
     }
 }
 
-export const userSignUp = (userInfo) => {
+export const userSignUp = (userInfo, setShow) => {
     return async dispatch => {
         try {
             dispatch({ type: authConstants?.SIGINUP_REQUEST })
             const res = await axiosInstance.post('/signup', userInfo);
             if (res.status === 201) {
+                const { token, user } = res?.data;
+                localStorage.setItem('token', JSON.stringify(token))
+                localStorage.setItem('user', JSON.stringify(user))
                 dispatch({
                     type: authConstants?.SIGINUP_SUCCESS,
                     payload: res?.data
                 })
+                setShow(false)
             }
         } catch (error) {
             dispatch({
                 type: authConstants?.SIGINUP_FALIURE,
-                payload: error?.message
+                payload: error?.response?.data?.message
             })
         }
     }

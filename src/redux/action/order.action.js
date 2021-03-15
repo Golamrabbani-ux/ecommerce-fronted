@@ -27,3 +27,45 @@ export const addOrder = (order, history) =>{
         }
     }
 }
+
+export const getorders = () =>{
+    return async dispatch =>{
+        try {
+            dispatch({type: orderConstants?.GET_ORDER_REQUEST})
+            const res = await axiosIntance.get('/getorders');
+            if(res.status === 200){
+                // localStorage.setItem('order', JSON.stringify(res?.data?.orders));
+                dispatch({
+                    type: orderConstants?.GET_ORDER_SUCCESS,
+                    payload: res?.data?.orders
+                })
+            }
+        } catch (error) {
+            dispatch({
+                type: orderConstants?.GET_ORDER_FAILURE,
+                payload: error?.message
+            })
+        }
+    }
+}
+
+export const getSingleOrder = (orderId) =>{
+    return async dispatch =>{
+        try {
+            dispatch({type: orderConstants?.GET_ORDER_DETAILS_REQUEST})
+            const res = await axiosIntance.post('/getorder', orderId);
+            if(res.status === 200){
+                const {  order, address} = res.data;
+                dispatch({
+                    type:orderConstants?.GET_ORDER_DETAILS_SUCCESS,
+                    payload: {order, address}
+                })
+            }
+        } catch (error) {
+            dispatch({
+                type:orderConstants?.GET_ORDER_DETAILS_FAILURE,
+                payload: error?.message
+            })
+        }
+    }
+}

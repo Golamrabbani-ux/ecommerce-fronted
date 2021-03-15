@@ -21,14 +21,12 @@ export const getProductsBySlug = (slug) => {
     }
 }
 
-
 export const getProductByPage = (page) => {
     const { cid, type } = page;
     return async dispatch => {
         try {
             dispatch({ type: GET_PRODUCTS_BY_PAGE_REQUEST })
             const res = await axiosInstance.get(`/page/${cid}/${type}`);
-            console.log(res);
             if (res?.status === 200) {
                 dispatch({
                     type: GET_PRODUCTS_BY_PAGE_REQUEST_SUCCESS,

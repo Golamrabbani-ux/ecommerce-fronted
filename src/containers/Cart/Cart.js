@@ -15,8 +15,7 @@ const Cart = (props) => {
     })
 
     // Remove From cart item
-    const handleDeleteCartProduct = (_id) => {
-
+    const handleDeleteCartProduct = (product) => {
     }
     // Only cart items call it use checkout page
     if (props?.onlyCartItems) {

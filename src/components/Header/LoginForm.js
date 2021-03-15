@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CustomModal from '../../common/CustomModal';
 import { userLogin, userSignUp } from '../../redux/action/auth.action';
 import './Header.css';
@@ -7,12 +7,17 @@ import './Header.css';
 const LoginForm = (props) => {
     const { show, setShow } = props;
     const dispatch = useDispatch();
+    const  { error } = useSelector(state => state?.auth);
+    const [customError, setCustomError] = useState('');
     const [toggle, setToggle] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    
+    useEffect(()=>{
+        setCustomError(error)
+    },[error])
 
     const handleSignSubmit = (e) => {
         e.preventDefault();
@@ -26,12 +31,12 @@ const LoginForm = (props) => {
     const handleSignUpSubmit = (e) => {
         e.preventDefault();
         const userInfo = {
-            firstName, 
+            firstName,
             lastName,
             email,
             password
         }
-        dispatch(userSignUp(userInfo))
+        dispatch(userSignUp(userInfo, setShow))
     }
 
 
@@ -46,6 +51,7 @@ const LoginForm = (props) => {
                 </div>
                 <div className='col-sm-8 px-0'>
                     <form onSubmit={handleSignSubmit} className='pt-5 px-3'>
+                        <small className='error-text'>{customError}</small>
                         <input
                             onChange={(e) => setEmail(e.target.value)}
                             name='email'
@@ -79,6 +85,7 @@ const LoginForm = (props) => {
                                 setLastName('');
                                 setEmail('');
                                 setPassword('');
+                                setCustomError('')
                             }}
                             className='create-account'
                         >
@@ -100,6 +107,7 @@ const LoginForm = (props) => {
                 </div>
                 <div className='col-sm-8 px-0'>
                     <form onSubmit={handleSignUpSubmit} className='pt-5 px-3'>
+                        <small className='error-text'>{customError}</small>
                         <input
                             onChange={(e) => setFirstName(e.target.value)}
                             name='firstName'
@@ -148,6 +156,7 @@ const LoginForm = (props) => {
                                 setToggle(!toggle);
                                 setEmail('')
                                 setPassword('')
+                                setCustomError('')
                             }}
                             className='create-account mb-2'
                         >

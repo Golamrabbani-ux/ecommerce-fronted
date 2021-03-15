@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addToCart } from '../../redux/action/cart.action';
 import { productImgWithApi } from '../../urlConfig';
 
 const CartItem = ({ cartItem, handleDeleteCartProduct }) => {
     const dispatch = useDispatch();
-    
     return (
         <div className='cart-desc'>
             {/* {console.log("cartItem", cartItem)} */}
@@ -19,7 +19,9 @@ const CartItem = ({ cartItem, handleDeleteCartProduct }) => {
                 </div>
                 <div className='col-sm-9 mb-2'>
                     <div className='product-description'>
-                        <p className='product-name'>{cartItem?.productName}</p>
+                        <Link to={`/products/${cartItem?.slug}/${cartItem?._id}`} style={{textDecoration: 'none'}}>
+                            <p className='product-name'>{cartItem?.productName}</p>
+                        </Link>
                         <div className='cart-size-and-seller text-muted'>
                             <p>Size: <span></span></p>
                             <p style={{ marginTop: '-13px' }}>Seller: <span></span></p>
@@ -55,10 +57,10 @@ const CartItem = ({ cartItem, handleDeleteCartProduct }) => {
                             <div className='col-sm-8 col-md-8 col-lg-5'>
                                 <div className='mt-4 d-flex text-bold'>
                                     <h6>Save For Later</h6>
-                                    <h6 
-                                        onClick={() => handleDeleteCartProduct(cartItem?._id)}
+                                    <h6
+                                        onClick={() => handleDeleteCartProduct(cartItem)}
                                         className='ml-2'
-                                    >   
+                                    >
                                         Remove
                                     </h6>
                                 </div>

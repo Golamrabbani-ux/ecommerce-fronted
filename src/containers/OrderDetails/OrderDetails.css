@@ -1,0 +1,105 @@
+.custom-container {
+  width: 88%;
+  min-width: 700px;
+  min-height: 474px;
+  position: relative;
+  padding-bottom: 40px;
+}
+.right-bar {
+  position: relative;
+  margin-left: 250px;
+}
+.order-item {
+  display: flex;
+  min-height: 80px;
+  margin: 24px 12px 24px 36px;
+  padding-right: 12px;
+}
+.order-item .item-pic {
+  float: left;
+}
+.order-item .item-pic > img {
+  width: 80px;
+  height: 80px;
+}
+.order-item .item-main {
+  width: 350px;
+}
+.order-item .item-name {
+  font-size: 14px;
+  margin-left: 30px;
+}
+.order-item .item-price-qty {
+  font-size: 14px;
+  margin-left: 50px;
+}
+.delevery-card {
+  min-height: 100px;
+  background-color: white;
+  color: #323233;
+  padding: 15px 20px;
+  border-radius: 3px;
+}
+.deleveri-area {
+  border-top: 1px solid #cccccc;
+  padding-top: 20px;
+}
+.delivery-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: -1px;
+}
+.delevery-card > p {
+  margin-bottom: 0;
+}
+
+/* Order track */
+
+.orderTrack {
+  width: 300px;
+  display: flex;
+  margin: 40px 0px 60px 0px;
+  justify-content: center !important;
+}
+.orderStatus {
+  width: 33.33%;
+  height: 5px;
+  background: #777;
+  position: relative;
+  font-size: 12px;
+}
+.orderStatus.active {
+  background: #26a541;
+}
+.orderStatus:last-child {
+  width: 0;
+}
+.orderStatus .point {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 8px;
+  background-color: #777;
+  top: -5px;
+}
+.orderStatus .point.active {
+  background-color: #26a541;
+}
+.orderInfo {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: -26px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.value {
+  font-size: 12px;
+  text-transform: capitalize;
+}
+

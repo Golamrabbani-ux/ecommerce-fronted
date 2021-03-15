@@ -10,14 +10,14 @@ import { NavLink } from 'react-router-dom';
 const dropdownLoginMenu = [
     { label: 'My Profile', logo: <IoPersonCircleOutline />, href: '/myprofile' },
     { label: 'Plus Zone', logo: <IoAddCircleOutline />, href: '/pluszone' },
-    { label: 'Orders', logo: <IoMedkitOutline />, href: '/orders' },
+    { label: 'Orders', logo: <IoMedkitOutline />, href: '/accounts/orders' },
     { label: 'Gift Of Cards', logo: <IoGiftOutline />, href: '/gift-of-cards' },
     { label: 'Rewards', logo: <IoMoveSharp />, href: '/rewards' },
 ]
 const dropdownLoggedInUserMenu = [
     { label: 'My Profile', logo: <IoPersonCircleOutline />, href: '/myprofile' },
     { label: 'Plus Zone', logo: <IoAddCircleOutline />, href: '/pluszone' },
-    { label: 'Orders', logo: <IoMedkitOutline />, href: '/orders' },
+    { label: 'Orders', logo: <IoMedkitOutline />, href: '/accounts/orders' },
     { label: 'Gift Of Cards', logo: <IoGiftOutline />, href: '/gift-of-cards' },
     { label: 'Rewards', logo: <IoMoveSharp />, href: '/rewards' },
     { label: 'Notifications', logo: <IoNotificationsOutline />, href: '/notifications' },

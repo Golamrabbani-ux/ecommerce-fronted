@@ -40,6 +40,9 @@
   font-weight: 600;
   line-height: 1;
 }
+.cart-desc .product-name:hover{
+  color: dodgerblue;
+}
 .cart-desc .cart-size-and-seller {
   font-size: 14px;
   font-weight: 600;
