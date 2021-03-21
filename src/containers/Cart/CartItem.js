@@ -8,7 +8,6 @@ const CartItem = ({ cartItem, handleDeleteCartProduct }) => {
     const dispatch = useDispatch();
     return (
         <div className='cart-desc'>
-            {/* {console.log("cartItem", cartItem)} */}
             <div className='row'>
                 <div className='col-sm-3'>
                     <div className='row'>

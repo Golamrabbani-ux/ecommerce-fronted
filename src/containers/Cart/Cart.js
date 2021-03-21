@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartCalculation from '../../components/CartCalculation/CartCalculation';
 import LayoutPage from '../../components/LayoutPage/LayoutPage'
@@ -8,14 +8,14 @@ import CartItem from './CartItem';
 import cartEmptyIcon from '../../others/empty-icon.png'
 
 const Cart = (props) => {
+    const dispatch = useDispatch();
     let { cartItems } = useSelector(state => state?.cart);
-
     const cartArray = Object.keys(cartItems)?.map((key) => {
         return cartItems[key]
     })
-
     // Remove From cart item
     const handleDeleteCartProduct = (product) => {
+        
     }
     // Only cart items call it use checkout page
     if (props?.onlyCartItems) {

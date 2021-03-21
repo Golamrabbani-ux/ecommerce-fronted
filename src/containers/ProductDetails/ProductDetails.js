@@ -40,7 +40,7 @@ const ProductDetails = () => {
             category: category?.name
         }
         dispatch(addToCart(payload))
-        histroy.push('/cart')
+        // histroy.push('/cart')
     }
 
 
