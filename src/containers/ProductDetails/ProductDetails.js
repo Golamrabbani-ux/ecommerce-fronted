@@ -42,7 +42,6 @@ const ProductDetails = () => {
         dispatch(addToCart(payload))
         histroy.push('/cart')
     }
-// console.log(cart);
 
     return (
         <LayoutPage>
