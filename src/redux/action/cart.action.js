@@ -16,6 +16,18 @@ export const addToCart = (cart, newQty = 1) => {
     }
 }
 
+export const deleteToCart = (cart) => {
+    return dispatch => {
+        let cartItems = JSON.parse(localStorage.getItem('cart'));
+        delete cartItems[cart?._id];
+        localStorage.setItem('cart', JSON.stringify(cartItems))
+        dispatch({
+            type: cartConstants?.REMOVE_TO_CART,
+            payload: cartItems
+        })
+    }
+}
+
 export const updateToCart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart'));
     return dispatch => {

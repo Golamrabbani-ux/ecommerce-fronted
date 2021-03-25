@@ -14,6 +14,7 @@ import moneyImg from '../../others/home/money.png';
 import discountImg from '../../others/home/discount.png';
 import SpaceBetween from '../../common/SpaceBetween';
 import { productWithSlug } from '../Api';
+import { Link } from 'react-router-dom';
 
 const settings = {
     dots: false,
@@ -85,7 +86,7 @@ const Homepage = () => {
         return (
             products?.slice(0, 3)?.map(pd =>
                 <div key={pd?._id} className='col-sm-6 col-md-4 col-lg-3 mb-2'>
-                    <a href={`/products/${pd?.category?.name}/${pd?._id}`} style={{ textDecoration: 'none' }}>
+                    <Link to={`/products/${pd?.category?.name}/${pd?._id}`} style={{ textDecoration: 'none' }}>
                         <div className='product-card'>
                             <div className='product-img-container'>
                                 <img className='brand-image' src={productImgWithApi(pd?.productPictures[0]?.img)} alt={pd?.productName} />
@@ -95,7 +96,7 @@ const Homepage = () => {
                                 <small className='text-muted'>Tk. {pd?.price}</small>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
             )

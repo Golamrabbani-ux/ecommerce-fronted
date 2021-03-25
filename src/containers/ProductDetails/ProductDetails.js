@@ -37,12 +37,12 @@ const ProductDetails = () => {
             price,
             img,
             slug: category?.slug,
-            category: category?.name
+            category: category?.name,
         }
         dispatch(addToCart(payload))
-        // histroy.push('/cart')
+        histroy.push('/cart')
     }
-
+// console.log(cart);
 
     return (
         <LayoutPage>

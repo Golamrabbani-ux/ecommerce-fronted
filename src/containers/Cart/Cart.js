@@ -6,6 +6,7 @@ import LayoutPage from '../../components/LayoutPage/LayoutPage'
 import './Cart.css'
 import CartItem from './CartItem';
 import cartEmptyIcon from '../../others/empty-icon.png'
+import { deleteToCart } from '../../redux/action/cart.action';
 
 const Cart = (props) => {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Cart = (props) => {
     })
     // Remove From cart item
     const handleDeleteCartProduct = (product) => {
-        
+        dispatch(deleteToCart(product))
     }
     // Only cart items call it use checkout page
     if (props?.onlyCartItems) {

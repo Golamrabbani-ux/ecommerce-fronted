@@ -13,7 +13,7 @@ const cartReducer = (state = initialState, action) => {
                 cartItems: action?.payload
             }
             return state;
-            case cartConstants?.REMOVE_TO_CART:
+        case cartConstants?.REMOVE_TO_CART:
             state = {
                 ...state,
                 cartItems: action?.payload
