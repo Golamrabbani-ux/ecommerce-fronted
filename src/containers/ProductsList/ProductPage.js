@@ -53,7 +53,7 @@ const ProductPage = (props) => {
                                 products?.map((pd) =>
                                     <div key={product?._id} className='col-12 col-sm-6 col-md-3'>
                                         <a href={`/products/${pd?.category?.name}/${pd?._id}`} style={{ textDecoration: 'none' }}>
-                                            <div className='product-card'>
+                                            <div className='product-card mb-3'>
                                                 <div className='product-img-container'>
                                                     <img className='brand-image' src={productImgWithApi(pd?.productPictures[0]?.img)} alt={pd?.productName} />
                                                 </div>

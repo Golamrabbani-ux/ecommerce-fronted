@@ -8,6 +8,7 @@ import { getProductDetailsBYId } from '../../redux/action/product.action';
 import { productImgWithApi } from '../../urlConfig';
 import Loading from '../../common/Loading/Loading'
 import '../containers.css';
+import './ProductDetails.css';
 
 const ProductDetails = () => {
     const params = useParams();
@@ -55,12 +56,6 @@ const ProductDetails = () => {
                                 <div className='col-md-5'>
                                     <div className='image-conatiner mt-3'>
                                         <img src={productImgWithApi(bigImageShow?.img)} alt='' />
-                                        {/* <InnerImageZoom 
-                                zoomScale={3} 
-                                src={productImgWithApi(bigImageShow?.img)}
-                                zoomType="hover"
-                                style={{width: '100%', height: '100%'}}
-                            /> */}
                                     </div>
                                     <div className='small-img-container'>
                                         {
@@ -73,7 +68,7 @@ const ProductDetails = () => {
                                                     <img
                                                         src={productImgWithApi(thum?.img)}
                                                         alt={productDetails?.productName}
-                                                        style={{ width: '50px', height: '85px' }}
+                                                        style={{ width: '30px', height: '30px' }}
                                                     />
                                                 </div>
                                             )
@@ -88,13 +83,26 @@ const ProductDetails = () => {
                                             </div>
                                             <div style={{ cursor: 'pointer' }}>
                                                 <IoShareSocialOutline /> Share
-                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='row my-2'>
                                         <h4 className='product-name'>{productDetails?.productName}</h4>
                                         <h2>Price: ₹ {productDetails?.price}</h2>
                                         <p className='ava-offers'>Available Offers</p>
+                                        <p className='prduct-details-p'><small>{productDetails?.display && `Display: ${productDetails?.display}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.processor && `Processor: ${productDetails?.processor}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.ram && `RAM: ${productDetails?.ram}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.rom && `ROM: ${productDetails?.rom}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.sdCard && `SD CARD: ${productDetails?.sdCard}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.warranty && `Warranty: ${productDetails?.warranty}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.wifiEnabled && `Wifi Enabled: ${productDetails?.wifiEnabled}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.operatingSupported && `Operating Supported: ${productDetails?.operatingSupported}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.battery && `Battery: ${productDetails?.battery}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.appSupported && `App Supported: ${productDetails?.appSupported}`}</small></p>
+                                        <p className='prduct-details-p'><small>{productDetails?.seller && `Seller: ${productDetails?.seller}`}</small></p>
+
+                                        
                                         <div className='desc text-muted'>
                                             <div>Description</div>
                                             <div>
@@ -108,12 +116,12 @@ const ProductDetails = () => {
                                                     onClick={handleAddToCart}
                                                 >
                                                     <IoCartSharp size={25} color='white' /> Add to cart
-                                    </button>
+                                                </button>
                                             </div>
                                             <div className='col-sm-6 col-md-6'>
                                                 <button className='pd-details-btn buy-now'>
                                                     <IoAnalytics size={25} color='white' /> Buy now
-                                    </button>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
