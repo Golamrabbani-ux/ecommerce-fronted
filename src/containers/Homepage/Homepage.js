@@ -23,6 +23,9 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     responsive: [
         {
             breakpoint: 1024,
@@ -30,7 +33,7 @@ const settings = {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
-                dots: false
+                dots: false,
             }
         },
         {
@@ -40,7 +43,7 @@ const settings = {
                 slidesToScroll: 1,
                 initialSlide: 1,
                 infinite: true,
-                dots: false
+                dots: false,
             }
         },
         {
@@ -50,7 +53,7 @@ const settings = {
                 slidesToScroll: 1,
                 initialSlide: 1,
                 infinite: true,
-                dots: false
+                dots: false,
             }
         }
     ]
@@ -91,8 +94,15 @@ const Homepage = () => {
                             <div className='product-img-container'>
                                 <img className='brand-image' src={productImgWithApi(pd?.productPictures[0]?.img)} alt={pd?.productName} />
                             </div>
-                            <div className='mt-2'>
+                            <div className='mt-2 text-center'>
                                 <p style={{ marginBottom: '5px' }}>{pd?.productName}</p>
+                                <div className='mb-2'>
+                                    <span className='review-star'>
+                                        4.3
+                                        <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==' alt='' />
+                                    </span> &nbsp;
+                                    <span>(132)</span>
+                                </div>
                                 <small className='text-muted'>Tk. {pd?.price}</small>
                             </div>
                         </div>

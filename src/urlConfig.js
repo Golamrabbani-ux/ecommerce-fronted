@@ -1,5 +1,5 @@
-export const api = ' http://localhost:2000/api';
+export const api = 'https://ecommerce-backend-gr.herokuapp.com/api';
 
 export const productImgWithApi = (img) =>{
-    return ` http://localhost:2000/public/${img}`
+    return `https://ecommerce-backend-gr.herokuapp.com/public/${img}`
 }

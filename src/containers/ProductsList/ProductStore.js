@@ -40,7 +40,7 @@ const ProductStore = () => {
                                                                             <div className='prodcut-image-container'>
                                                                                 <img src={productImgWithApi(pd?.productPictures[0]?.img)} className='product-image' alt={pd?.productName} />
                                                                             </div>
-                                                                            <div className='my-2'>
+                                                                            <div className='my-2 mr-2'>
                                                                                 <h6>{pd?.productName}</h6>
                                                                                 <div className='mb-2'>
                                                                                     <span className='review-star'>
